@@ -11,7 +11,6 @@
     header {
         width: 100vw;
         height: 100vh;
-        background-color: green;
         display: grid;
         justify-content: center;
     }
@@ -19,9 +18,13 @@
     main {
         width: 100vw;
         height: 100vh;
-        background-color: blue;
         display: grid;
         justify-content: center;
+    }
+    
+    form {
+        position: relative;
+        top: 50%;
     }
     
     footer {
@@ -33,20 +36,61 @@
     }
 </style>
 
+
+
 <body>
     <header>
 
-        inicio
+
+        <form method="dialog">
+            DIGITA AQUI QUALQUER COISA
+            <p><input type="text" placeholder="Nome" required name="Name" id="digita" alt="digita seu nome" oninput="enviar()"></p>
+            <input type="checkbox" id="ok" value="o">
+            <button type=""> click aqui</button> <br>
+
+            <br>
+            <button type="" onclick="verificar()">verificar</button>
+            <div id="verifica"></div>
+        </form>
+        <div id="letra">...</div>
+
+        <div>
+
+
+            <div id="valor">digitando o numero </div>
+
+            <select name="" id="teste" onclick="mostrar()">
+                
+                <option value="" > 0</option>
+                <option value="1" > valor 1</option>
+                <option value="2">valor 2 </option>
+                <option value="3" label="valor 3 ">
+          
+        
+            </select>
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
 
     </header>
 
 
 
 
-    <main>
+    <main align="center">
 
 
-        meio
+
 
     </main>
 
@@ -59,5 +103,48 @@
 
 
 </body>
+
+
+<script>
+    function mostrar() {
+
+        var letra = document.getElementById('teste').option[2]
+
+
+
+
+
+        document.getElementById('valor').innerHTML = letra
+    }
+</script>
+
+
+
+
+<script>
+    digi = document.getElementById('digita')
+    console.log(digi.value);
+
+    function enviar() {
+
+
+
+        document.getElementById('letra').innerHTML = digi.value;
+
+        console.log(digi.value);
+    }
+
+    function verificar() {
+        if (digi.value == 0) {
+
+        } else {
+
+            document.getElementById('verifica').innerHTML = "verificado " +
+                digi.value
+        }
+    }
+</script>
+
+</html>
 
 </html>
