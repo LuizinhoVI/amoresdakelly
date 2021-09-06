@@ -34,6 +34,14 @@
         display: grid;
         justify-content: center;
     }
+    
+    #teste1 {
+        display: none;
+    }
+    
+    #suco {
+        display: none;
+    }
 </style>
 
 
@@ -57,18 +65,103 @@
         <div>
 
 
-            <div id="valor">digitando o numero </div>
+            <div id="valor">digitando o numero... </div>
 
-            <select name="" id="teste" onclick="mostrar()">
+            <select name="" id="teste1" onclick="mostrar()">
                 
-                <option value="" > 0</option>
-                <option value="1" > valor 1</option>
-                <option value="2">valor 2 </option>
-                <option value="3" label="valor 3 ">
-          
-        
+                <option value="" disabled> selecionar </option>
+                <option value="1" > picanha</option>
+                <option value="2">carne do sol  </option>
+                <option  value="3" > frango </option>
+            </select>
+            <select name="" id="suco" onclick="suco()">
+                <optgroup>
+
+                    <option value="" > selecionar </option>
+                    <option value="1" > caju </option>
+                    <option value="2">abacaxi </option>
+                    <option  value="3" > ginipapo</option>
+                </optgroup>
             </select>
 
+            <select name="" id="escolha" onclick="view()">
+
+                <option value="1">1 desativa </option>
+                 <option value="2">suco </option>
+                 <option value="3">carne </option>
+
+            </select>
+            <script>
+                nome_do_prato = "";
+
+                function view() {
+
+
+                    var escolha = document.getElementById('escolha')
+
+                    if (escolha.value == 1) {
+                        document.getElementById().removeAttribute()
+
+
+                    } else {
+
+                    }
+                    if (escolha.value == 2) {
+                        document.getElementById('suco').style.display = "block";
+
+                    } else {
+                        document.getElementById('suco').style.display = "none";
+                    }
+                    if (escolha.value == 3) {
+                        document.getElementById('teste1').style.display = "block";
+
+                    } else {
+
+                        document.getElementById('teste1').style.display = "none";
+                    }
+                }
+
+
+
+                function mostrar() {
+
+                    for (let i = 1; i <= 3; i++) {
+                        var letra = document.getElementById('teste1')[i]
+
+                        if (letra.selected == true) {
+                            nome_do_prato = letra.innerHTML
+                            break;
+                        } else {
+
+                        }
+
+                    }
+
+
+
+                    document.getElementById('valor').innerHTML = nome_do_prato;
+                }
+
+                function suco() {
+
+                    for (let i = 1; i <= 3; i++) {
+                        var letra = document.getElementById('suco')[i]
+
+                        if (letra.selected == true) {
+                            nome_do_prato = letra.innerHTML
+                            break;
+                        } else {
+
+
+                        }
+
+                    }
+
+
+
+                    document.getElementById('valor').innerHTML = nome_do_prato;
+                }
+            </script>
 
 
 
@@ -105,18 +198,7 @@
 </body>
 
 
-<script>
-    function mostrar() {
 
-        var letra = document.getElementById('teste').option[2]
-
-
-
-
-
-        document.getElementById('valor').innerHTML = letra
-    }
-</script>
 
 
 
