@@ -1,232 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 
 <head>
+    <title></title>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
+
 <style>
-    header {
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        justify-content: center;
-    }
-    
-    main {
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        justify-content: center;
-    }
-    
-    form {
-        position: relative;
-        top: 50%;
-    }
-    
-    footer {
-        width: 100vw;
-        height: 100vh;
-        background-color: yellow;
-        display: grid;
-        justify-content: center;
-    }
-    
-    #teste1 {
-        display: none;
-    }
-    
-    #suco {
-        display: none;
-    }
+
 </style>
 
 
-
 <body>
-    <header>
 
-
-        <form method="dialog">
-            DIGITA AQUI QUALQUER COISA
-            <p><input type="text" placeholder="Nome" required name="Name" id="digita" alt="digita seu nome" oninput="enviar()"></p>
-            <input type="checkbox" id="ok" value="o">
-            <button type=""> click aqui</button> <br>
-
-            <br>
-            <button type="" onclick="verificar()">verificar</button>
-            <div id="verifica"></div>
-        </form>
-        <div id="letra">...</div>
-
-        <div>
-
-
-            <div id="valor">digitando o numero... </div>
-
-            <select name="" id="teste1" onclick="mostrar()">
-                
-                <option value="" disabled> selecionar </option>
-                <option value="1" > picanha</option>
-                <option value="2">carne do sol  </option>
-                <option  value="3" > frango </option>
-            </select>
-            <select name="" id="suco" onclick="suco()">
-                <optgroup>
-
-                    <option value="" > selecionar </option>
-                    <option value="1" > caju </option>
-                    <option value="2">abacaxi </option>
-                    <option  value="3" > ginipapo</option>
-                </optgroup>
-            </select>
-
-            <select name="" id="escolha" onclick="view()">
-
-                <option value="1">1 desativa </option>
-                 <option value="2">suco </option>
-                 <option value="3">carne </option>
-
-            </select>
-            <script>
-                nome_do_prato = "";
-
-                function view() {
-
-
-                    var escolha = document.getElementById('escolha')
-
-                    if (escolha.value == 1) {
-                        document.getElementById().removeAttribute()
-
-
-                    } else {
-
-                    }
-                    if (escolha.value == 2) {
-                        document.getElementById('suco').style.display = "block";
-
-                    } else {
-                        document.getElementById('suco').style.display = "none";
-                    }
-                    if (escolha.value == 3) {
-                        document.getElementById('teste1').style.display = "block";
-
-                    } else {
-
-                        document.getElementById('teste1').style.display = "none";
-                    }
-                }
+    <div align="center">
 
 
 
-                function mostrar() {
-
-                    for (let i = 1; i <= 3; i++) {
-                        var letra = document.getElementById('teste1')[i]
-
-                        if (letra.selected == true) {
-                            nome_do_prato = letra.innerHTML
-                            break;
-                        } else {
-
-                        }
-
-                    }
 
 
-
-                    document.getElementById('valor').innerHTML = nome_do_prato;
-                }
-
-                function suco() {
-
-                    for (let i = 1; i <= 3; i++) {
-                        var letra = document.getElementById('suco')[i]
-
-                        if (letra.selected == true) {
-                            nome_do_prato = letra.innerHTML
-                            break;
-                        } else {
-
-
-                        }
-
-                    }
-
-
-
-                    document.getElementById('valor').innerHTML = nome_do_prato;
-                }
-            </script>
+        <input type="text" id="nome" name="nome"> nome
+        <br>
+        <br>
+        <input type="text" id="email" name="email"> email
+        <br>
+        <br>
+        <button onclick="enviar()"> enviar</button>
+        <button onclick="mostrar()"> mostrar</button>
 
 
 
 
 
 
-
-
-
-
+        <div>seu nome é :
+            <label id="mostrar">  
+            </label>
         </div>
 
 
-    </header>
-
-
-
-
-    <main align="center">
-
-
-
-
-    </main>
-
-
-    <footer>
-        fim
-
-    </footer>
-
-
+    </div>
 
 </body>
 
 
-
-
-
-
-
 <script>
-    digi = document.getElementById('digita')
-    console.log(digi.value);
+    index = 0;
 
     function enviar() {
 
 
+        var nome = document.getElementById('nome')
+        var email = document.getElementById('email')
 
-        document.getElementById('letra').innerHTML = digi.value;
 
-        console.log(digi.value);
-    }
+        if (typeof(Storage.value) == "undefined") {
 
-    function verificar() {
-        if (digi.value == 0) {
+
+            if (nome.value != 0) {
+
+
+
+                index++;
+                localStorage.setItem(index, nome.value);
+
+
+
+
+                console.log(Storage.length)
+
+
+
+
+
+
+
+            } else {
+
+                alert("digita o seu nome ")
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
 
         } else {
 
-            document.getElementById('verifica').innerHTML = "verificado " +
-                digi.value
+            alert("variaveel já colocada ")
+                // for (let index = 0; index <= Storage.value; index++) {
+
+            //     localStorage.setItem("nome " + index, nome.value);
+
+            //     mostrar.innerHTML = localStorage.getItem("nome " + index);
+            // }
         }
     }
-</script>
 
-</html>
+    function mostrar() {
+        var nomes = '';
+        var mostrar = document.getElementById('mostrar')
+
+
+
+        var contador = 0;
+
+        while (true) {
+            contador++;
+            var tipo = localStorage.getItem(contador)
+
+            if (tipo == null) {
+                break;
+            }
+            nomes += " " + tipo + " ";
+        }
+
+        mostrar.innerHTML = nomes;
+
+    }
+</script>
 
 </html>
