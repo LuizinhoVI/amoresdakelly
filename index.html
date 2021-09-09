@@ -9,12 +9,35 @@
 </head>
 
 <style>
-
+    nav {
+        position: absolute;
+        color: black;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        z-index: 1 !important;
+    }
+    
+    nav1 {
+        position: absolute;
+        color: black;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(81, 255, 0);
+        z-index: 5;
+    }
 </style>
 
+<script>
+    var content = file_get_contents('https://www.whois.com/whois/www.com.br');
+</script>
 
 <body>
 
+
+
+    <nav> <label for="">teste</label> </nav>
+    <nav1><label for="">2 teste </label></nav1>
     <div align="center">
 
 
@@ -46,88 +69,5 @@
 </body>
 
 
-<script>
-    index = 0;
-
-    function enviar() {
-
-
-        var nome = document.getElementById('nome')
-        var email = document.getElementById('email')
-
-
-        if (typeof(Storage.value) == "undefined") {
-
-            var novo = numero;
-            if (nome.value != 0) {
-
-
-
-                index++;
-                localStorage.setItem(index, nome.value);
-
-
-
-
-                console.log(Storage.length)
-
-
-
-
-
-
-
-            } else {
-
-                alert("digita o seu nome ")
-
-
-            }
-
-
-
-
-
-
-
-
-
-
-
-
-        } else {
-
-            alert("variaveel já colocada ")
-                // for (let index = 0; index <= Storage.value; index++) {
-
-            //     localStorage.setItem("nome " + index, nome.value);
-
-            //     mostrar.innerHTML = localStorage.getItem("nome " + index);
-            // }
-        }
-    }
-
-    function mostrar() {
-        var nomes = '';
-        var mostrar = document.getElementById('mostrar')
-
-
-
-        var contador = 0;
-
-        while (true) {
-            contador++;
-            var tipo = localStorage.getItem(contador)
-
-            if (tipo == null) {
-                break;
-            }
-            nomes += " " + tipo + " ";
-        }
-
-        mostrar.innerHTML = nomes;
-
-    }
-</script>
 
 </html>

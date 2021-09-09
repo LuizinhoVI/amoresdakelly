@@ -10,9 +10,11 @@ int main(){
 	
 int escolha=0;	
 		ifstream arquivo;
+while(true){
 
-	cout <<"1) para ler arquivo" << endl ;
-	cout <<"2) escrever arquivo" << endl;
+	cout <<"1)  ler arquivo" << endl ;
+	cout <<"2) escrever dentro do arquivo" << endl;
+cout <<"3) sair do programa" << endl;
 		cin >> escolha;
 	
 	if(escolha==1){
@@ -25,9 +27,10 @@ int escolha=0;
 		
 		while(arquivo.good()){
 			
-			cout<< c ;Sleep(1000); 
+			cout<< c ;Sleep(100); 
 			
-c = arquivo.get();			
+			c = arquivo.get();
+					
 		}
 		//arquivo << " hello word ";
 		
@@ -35,5 +38,7 @@ c = arquivo.get();
 		
 	}
 	
-	
+if(escolha==3){
+	break;
+}}
 return 0; }
