@@ -1,73 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-    <title></title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
+    <title>FileAPI HTML5</title>
+    <style type="text/css">
+        #filecontents {
+            border: double;
+            overflow-y: scroll;
+            height: 400px;
+        }
+        
+        div {
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        
+        iframe {
+            text-align: center;
+            border: none;
+            width: 100%;
+            height: none;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    </style>
 </head>
-
-<style>
-    nav {
-        position: absolute;
-        color: black;
-        width: 100px;
-        height: 100px;
-        background-color: red;
-        z-index: 1 !important;
-    }
-    
-    nav1 {
-        position: absolute;
-        color: black;
-        width: 100px;
-        height: 100px;
-        background-color: rgb(81, 255, 0);
-        z-index: 5;
-    }
-</style>
-
-<script>
-    var content = file_get_contents('https://www.whois.com/whois/www.com.br');
-</script>
 
 <body>
 
-
-
-    <nav> <label for="">teste</label> </nav>
-    <nav1><label for="">2 teste </label></nav1>
-    <div align="center">
-
-
-
-
-
-        <input type="text" id="nome" name="nome"> nome
-        <br>
-        <br>
-        <input type="text" id="email" name="email"> email
-        <br>
-        <br>
-        <button onclick="enviar()"> enviar</button>
-        <button onclick="mostrar()"> mostrar</button>
-
-
-
-
-
-
-        <div>seu nome é :
-            <label id="mostrar">  
-            </label>
-        </div>
-
-
+    <div>
+        <iframe src="teste.pdf" class="teste">
+        </iframe>
     </div>
 
 </body>
-
-
 
 </html>
