@@ -4,7 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="script.js"></script>
     <title>FileAPI HTML5</title>
     <style type="text/css">
         #filecontents {
@@ -15,7 +16,12 @@
         
         div {
             text-align: center;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: 30px;
+            width: 20%;
+            height: 20%;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 0px;
+            font-family: Arial, Helvetica, sans-serif;
         }
         
         iframe {
@@ -26,15 +32,23 @@
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
     </style>
+
 </head>
 
 <body>
 
-    <div>
-        <iframe src="teste.pdf" class="teste">
-        </iframe>
-    </div>
 
+
+    <div w3-include-html="texto.txt"></div>
+
+
+    <br>
+
+    <div w3-include-html="teste.html"></div>
+
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
