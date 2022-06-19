@@ -2,49 +2,122 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+    <title>print</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <script src="https://www.w3schools.com/lib/w3.js"></script>
     <script src="script.js"></script>
     <title>FileAPI HTML5</title>
+
+
+
     <style type="text/css">
-        #filecontents {
-            border: double;
-            overflow-y: scroll;
-            height: 400px;
+        body {
+            margin: 0;
+            /* border: solid 1px red; */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
         
-        div {
-            text-align: center;
-            font-size: 30px;
-            width: 20%;
-            height: 20%;
-            border-radius: 20px;
-            box-shadow: 0px 0px 10px 0px;
-            font-family: Arial, Helvetica, sans-serif;
+        .menu {
+            display: block;
+            position: absolute;
+            /* border: solid red 1px; */
+            top: 90%;
+            left: 25%;
+            transform: translateY(-25%);
+            /* width: 300px; */
+            /* height: 20vh; */
         }
         
-        iframe {
+        .bt {
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        
+        .p_azul {
+            width: 14.5cm;
+            height: 19.5cm;
+            /* border: blue solid 1px; */
+            position: absolute;
+            display: block;
+            /* margin-top: -14.7cm; */
+            /* margin-left: 10.8cm; */
+        }
+        
+        .descricao {
+            position: absolute;
+            /* margin-top: -14.7cm; */
+            /* margin-left: 11cm; */
+            margin-top: 4.8cm;
+            margin-left: 0.5cm;
+            font-size: 45px;
+            /* border: solid red 1px; */
+            width: 14cm;
+            height: 2.2cm;
+            text-align: left;
+        }
+        
+        .valor {
+            position: absolute;
+            font-size: 150px;
+            margin-top: 10cm;
+            margin-left: 5cm;
+            /* border: solid red 1px; */
+            width: 350px;
+            height: 150px;
             text-align: center;
-            border: none;
-            width: 100%;
-            height: none;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            justify-content: center;
+        }
+        
+        @media print {
+            .menu {
+                display: none;
+            }
+            .placa {
+                display: block;
+            }
+            body {
+                /* border: solid 1px red; */
+                display: block;
+                grid-template-columns: 1fr 1fr;
+            }
+            .p_azul {
+                display: none;
+            }
+            .descricao {
+                display: block;
+            }
+            .valor {
+                display: block;
+            }
         }
     </style>
 
 </head>
 
 <body>
+    <div class="placa" align="right">
+        <img src="PLACA AZUL.bmp" class="p_azul" alt="">
+        <div class="descricao">biscoito de morango120g</div>
+        <div class="valor">2,50</div>
 
 
+    </div>
+    <div align="center" class="menu">
 
-    <div w3-include-html="texto.txt"></div>
+        <!-- <div>
+            Digita o nome do produto: <input type="text">
+        </div>
+        <br>
+        <div>
+            digita o valor da placa : <input type="text">
+        </div>
+        <br> -->
+        <input class="bt" type="submit" value="imprimir" onclick="window.print()">
+    </div>
 
-
-    <br>
-
-    <div w3-include-html="teste.html"></div>
 
 
 
